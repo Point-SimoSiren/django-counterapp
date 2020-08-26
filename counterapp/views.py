@@ -11,8 +11,9 @@ def hellocareeria(request):
     return render(request,"helloworld/hellocareeria.html",context)
 
 def counter(request):
-    count = 0
-    context = {'count': count }
+    obj = CounterModel.objects.filter(id = 1)[0]
+    mynumber = obj.number
+    context = {'number': mynumber}
     return render(request,"helloworld/counter.html",context)
 
 def increment(request):
